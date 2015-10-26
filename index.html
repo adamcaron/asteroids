@@ -3,10 +3,23 @@
 <head>
   <meta charset="utf-8">
   <title>Game Time</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <canvas id="game" width="300px" height="300px"></canvas>
-  <script src="main.bundle.js"></script>
+<div class="row">
+  <h3 id="title">Asteroids</h3>
+  <div class="col s8">
+    <canvas id="game" width="800px" height="400px"></canvas>
+  </div>
+  <div id="dashboard" class="col s4">
+    <div id="score">
+    </div>
+    <div id="lives">
+    </div>
+  </div>
+</div>
+<script src="main.bundle.js"></script>
 </body>
 </html>
