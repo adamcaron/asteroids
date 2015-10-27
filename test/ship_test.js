@@ -3,20 +3,33 @@ const assert = chai.assert;
 const Ship = require('../lib/ship');
 const $ = require('jquery');
 
-describe('my test suite', function () {
-    it('should work', function () {
+describe('ship functionality', function () {
+    it('testing should work', function () {
         assert(true);
     });
 
-    it('should add two plus two', function () {
-        let four = 2 + 2;
-        assert.equal(four,4);
+    it('should have properties', function () {
+        let ship = new Ship(10, 10, 20, 10);
+        assert.equal(ship.width,20);
+        assert.equal(ship.height,10);
+        assert.equal(ship.angle,0);
+        assert.equal(ship.thrustAngle,0);
+        assert.equal(ship.velocity,0);
+
     });
 
-    it('should be deep equal', function (){
-        let x = [1,2,3,];
-        assert.deepEqual(x,[1,2,3]);
-        //Deep equal checks order and content of arrays
+    it('should update angle', function (){
+        let ship = new Ship(10, 10, 20, 10);
+        ship.updateAngle(90);
+        assert.equal(ship.angle,Math.PI/2);
+    });
+
+    it('should move ship', function (){
+        let ship = new Ship(10, 10, 20, 10);
+        ship.thrustAngle = Math.PI/2;
+        ship.velocity = 1;
+        ship.moveShip();
+        assert.equal(ship.x,11);
     });
 });
 
