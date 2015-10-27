@@ -1,8 +1,6 @@
-const chai = require('chai');
-const assert = chai.assert;
+require('./ship_test');
+require('./asteroid_test');
+require('./laser_test');
+require('./spaceTime_test');
 
-describe('my test suite', function () {
-  it('should work', function () {
-    assert(true);
-  });
-});
+
