@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Hyperspace';
+}
+
+html {
+  font-family: 'Hyperspace', 'san-serif';
+}
+
 body {
   background: #2b2b2b;
 }
@@ -12,8 +20,20 @@ body {
   font-size: 32px;
 }
 
-#dashboard {
+#info {
   color: white;
+}
+
+#score {
+  font-size: 32px;
+}
+
+#lives {
+  font-size: 18px;
+}
+
+#keys {
+  margin-top: 50px;
 }
 
 #game-over {
