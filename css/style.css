@@ -15,3 +15,20 @@ body {
 #dashboard {
   color: white;
 }
+
+#game-over {
+  position: relative;
+  background-color: black;
+  width: 800px;
+  height: 400px;
+  /*display: none;*/
+  color: white;
+  text-align: center;
+}
+
+#game-over p {
+  position: absolute;
+  width: 100%;
+  margin-top: 150px;
+  font-size: 2em;
+}
