@@ -1,21 +1,31 @@
 const chai = require('chai');
 const assert = chai.assert;
 const Laser = require('../lib/laser');
+const Ship = require('../lib/ship');
 const $ = require('jquery');
 
-describe('my test suite', function () {
-    it('should work', function () {
+describe('laser functionality', function () {
+    it('testing should work', function () {
         assert(true);
     });
 
-    it('should add two plus two', function () {
-        let four = 2 + 2;
-        assert.equal(four,4);
+    it('should have properties', function () {
+        let ship = new Ship(10, 30, 20, 10);
+        let laser = new Laser(ship);
+        assert.equal(laser.x,10);
+        assert.equal(laser.y,30);
+        assert.equal(laser.angle,0);
+        assert.equal(laser.laserSpeed,15);
+
     });
 
-    it('should be deep equal', function (){
-        let x = [1,2,3,];
-        assert.deepEqual(x,[1,2,3]);
-        //Deep equal checks order and content of arrays
+    it('should update angle when ship updates angle', function (){
+        let ship = new Ship(10, 10, 20, 10);
+        let laser = new Laser(ship);
+        assert.equal(laser.angle,0);
+        ship.updateAngle(90);
+        assert.equal(laser.angle,0);
     });
+
+
 });

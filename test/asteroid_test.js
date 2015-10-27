@@ -3,19 +3,27 @@ const assert = chai.assert;
 const Asteroid = require('../lib/asteroid');
 const $ = require('jquery');
 
-describe('my test suite', function () {
-    it('should work', function () {
+describe('asteroid functionality', function () {
+    it('testing should work', function () {
         assert(true);
     });
 
-    it('should add two plus two', function () {
-        let four = 2 + 2;
-        assert.equal(four,4);
+    it('should have properties', function () {
+        let asteroid = new Asteroid(10, 10, 40, 30);
+        assert.equal(asteroid.width,40);
+        assert.equal(asteroid.height,30);
+        assert.equal(asteroid.hit_count,0);
     });
 
-    it('should be deep equal', function (){
-        let x = [1,2,3,];
-        assert.deepEqual(x,[1,2,3]);
-        //Deep equal checks order and content of arrays
+    it('should move asteroid', function (){
+        let asteroid = new Asteroid(10, 10, 40, 30);
+
+        asteroid.vx = 2;
+        asteroid.vy = 2;
+        asteroid.move();
+        assert.equal(asteroid.x,12);
+        assert.equal(asteroid.y,12);
     });
+
+
 });
