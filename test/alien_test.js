@@ -2,6 +2,7 @@
 const chai = require('chai');
 const assert = chai.assert;
 const Alien = require('../lib/alien');
+const AlienLaser = require('../lib/alienLaser');
 const $ = require('jquery');
 
 describe('alien functionality', function () {
@@ -21,4 +22,5 @@ describe('alien functionality', function () {
         alien.move();
         assert.equal(alien.x,11.2);
     });
+    
 });
