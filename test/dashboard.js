@@ -6,6 +6,7 @@ require('./shield_test');
 require('./spaceTime_test');
 require('./alienLaser_test');
 require('./alien_test');
+require('./game_test');
 
 
 

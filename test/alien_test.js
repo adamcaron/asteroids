@@ -22,5 +22,5 @@ describe('alien functionality', function () {
         alien.move();
         assert.equal(alien.x,11.2);
     });
-    
+
 });
