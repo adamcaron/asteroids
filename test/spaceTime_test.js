@@ -40,4 +40,36 @@ describe('spaceTime functionality', function () {
 
         assert(spaceTime.aliens.length, numberOfAliens);
     });
+
+    it('fires lasers', function () {
+        let canvas    = { width: 800, height: 400 };
+        let game      = { asteroidQuantity: 5, alienQuantity: 2 };
+        let spaceTime = new ST(canvas, null, game);
+
+        spaceTime.fireLaser();
+
+        assert(spaceTime.lasers.length, 1)
+    });
+
+    it('activates shields', function () {
+        let canvas    = { width: 800, height: 400 };
+        let game      = { asteroidQuantity: 5, alienQuantity: 2 };
+        let spaceTime = new ST(canvas, null, game);
+
+        spaceTime.activeShield();
+
+        assert(spaceTime.shields.length, 1)
+    });
+
+    it('drops mines', function () {
+        let canvas    = { width: 800, height: 400 };
+        let game      = { asteroidQuantity: 5, alienQuantity: 2 };
+        let spaceTime = new ST(canvas, null, game);
+
+        spaceTime.layMine();
+        spaceTime.layMine();
+        spaceTime.layMine();
+
+        assert(spaceTime.mines.length, 3)
+    });
 });
