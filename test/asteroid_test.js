@@ -1,8 +1,8 @@
 'use strict';
-const chai = require('chai');
-const assert = chai.assert;
+const chai     = require('chai');
+const assert   = chai.assert;
 const Asteroid = require('../lib/asteroid');
-const $ = require('jquery');
+const $        = require('jquery');
 
 describe('asteroid functionality', function () {
     it('testing should work', function () {
@@ -11,6 +11,7 @@ describe('asteroid functionality', function () {
 
     it('should have properties', function () {
         let asteroid = new Asteroid(10, 10, 40, 30);
+
         assert.equal(asteroid.width,40);
         assert.equal(asteroid.height,30);
         assert.equal(asteroid.hit_count,0);
