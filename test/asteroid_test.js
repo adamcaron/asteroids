@@ -1,8 +1,8 @@
-"use strict";
-const chai = require('chai');
-const assert = chai.assert;
+'use strict';
+const chai     = require('chai');
+const assert   = chai.assert;
 const Asteroid = require('../lib/asteroid');
-const $ = require('jquery');
+const $        = require('jquery');
 
 describe('asteroid functionality', function () {
     it('testing should work', function () {

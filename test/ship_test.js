@@ -1,10 +1,11 @@
-"use strict";
-const chai = require('chai');
+'use strict';
+const chai   = require('chai');
 const assert = chai.assert;
-const Ship = require('../lib/ship');
-const $ = require('jquery');
+const Ship   = require('../lib/ship');
+const $      = require('jquery');
 
 describe('ship functionality', function () {
+
     it('testing should work', function () {
         assert(true);
     });

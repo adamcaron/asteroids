@@ -1,11 +1,12 @@
 "use strict";
-const chai = require('chai');
+const chai   = require('chai');
 const assert = chai.assert;
-const Laser = require('../lib/laser');
-const Ship = require('../lib/ship');
-const $ = require('jquery');
+const Laser  = require('../lib/laser');
+const Ship   = require('../lib/ship');
+const $      = require('jquery');
 
 describe('laser functionality', function () {
+
     it('testing should work', function () {
         assert(true);
     });
@@ -26,6 +27,4 @@ describe('laser functionality', function () {
         ship.updateAngle(90);
         assert.equal(laser.angle,0);
     });
-
-
 });
