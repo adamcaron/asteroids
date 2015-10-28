@@ -29,4 +29,15 @@ describe('spaceTime functionality', function () {
 
         assert(spaceTime.asteroids.length, numberOfAsteroids);
     });
+
+    it('initializes some aliens', function () {
+        let canvas    = { width: 800, height: 400 };
+        let game      = { asteroidQuantity: 5, alienQuantity: 2 };
+        let spaceTime = new ST(canvas, null, game);
+        let numberOfAliens = 2;
+
+        spaceTime.initialAliens(numberOfAliens);
+
+        assert(spaceTime.aliens.length, numberOfAliens);
+    });
 });
