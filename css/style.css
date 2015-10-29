@@ -23,6 +23,9 @@ body {
 
 #info {
   color: white;
+  border: solid white 1px;
+  height: 400px;
+  background: black;
 }
 
 #score {
@@ -35,6 +38,16 @@ body {
 
 #keys {
   margin-top: 50px;
+}
+
+#start-screen {
+  padding-top: 50px;
+  position: relative;
+  background-color: black;
+  width: 800px;
+  height: 400px;
+  color: white;
+  text-align: center;
 }
 
 #game-over {
@@ -51,4 +64,10 @@ body {
   width: 100%;
   margin-top: 150px;
   font-size: 2em;
+}
+
+#game-over input {
+  margin-top: 230px;
+  color: white;
+  text-align: center;
 }
