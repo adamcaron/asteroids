@@ -1,9 +1,10 @@
 @font-face {
   font-family: 'Hyperspace';
+  src:  url('Hyperspace.ttf') format('truetype');
 }
 
 html {
-  font-family: 'Hyperspace', 'san-serif';
+  font-family: 'Hyperspace', Helvetica, sans-serif;
 }
 
 body {
@@ -22,6 +23,8 @@ body {
 
 #info {
   color: white;
+  border: solid white 1px;
+  height: 400px;
 }
 
 #score {
@@ -34,6 +37,16 @@ body {
 
 #keys {
   margin-top: 50px;
+}
+
+#start-screen {
+  padding-top: 50px;
+  position: relative;
+  background-color: black;
+  width: 800px;
+  height: 400px;
+  color: white;
+  text-align: center;
 }
 
 #game-over {
@@ -52,15 +65,8 @@ body {
   font-size: 2em;
 }
 
-#enter-user {
-  position: relative;
-  background-color: black;
-  width: 800px;
-  height: 400px;
-}
-
-#enter-user input {
-  margin-top: 150px;
+#game-over input {
+  margin-top: 230px;
   color: white;
   text-align: center;
 }

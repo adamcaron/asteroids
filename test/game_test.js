@@ -1,10 +1,10 @@
 'use strict';
-const chai = require('chai');
-const assert = chai.assert;
-const Game = require('../lib/game');
-const Alien = require('../lib/alien');
+const chai     = require('chai');
+const assert   = chai.assert;
+const Game     = require('../lib/game');
+const Alien    = require('../lib/alien');
 const Asteroid = require('../lib/asteroid');
-const $ = require('jquery');
+const $        = require('jquery');
 
 describe('game functionality', function () {
     it('testing should work', function () {
