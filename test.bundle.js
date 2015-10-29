@@ -1790,9 +1790,7 @@
 	    var spaceTime = this;
 	    var ship = this.ship;
 	    if (asteroidCollidesWith(laser, ship)) {
-	        spaceTime.alienLasers = spaceTime.alienLasers.filter(function (l) {
-	            return l !== laser;
-	        });
+	        spaceTime.alienLasers = [];
 	        ship.dead = true;
 	        spaceTime.game.die();
 	        setTimeout(function () {
