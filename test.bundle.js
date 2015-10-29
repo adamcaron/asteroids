@@ -1532,12 +1532,15 @@
 	    this.score = 0;
 	    this.lives = 3;
 	    this.level = 1;
+	    this.start_counter = 0;
+	    this.shield = 100;
 	    this.asteroidQuantity = 5;
 	    this.asteroidVelocity = .75;
 	    this.alienQuantity = 2;
 	    this.initializeScore();
 	    this.initializeLives();
 	    this.initializeLevel();
+	    this.initializeShield();
 	    this.spaceTime = new SpaceTime(canvas, context, this);
 
 	    return this;
@@ -1562,10 +1565,15 @@
 	    $('#dashboard').append(currentLevel);
 	};
 
+	Game.prototype.initializeShield = function () {
+	    var currentShield = "<div id='shield'>Shield Remaining: " + this.shield + "</div>";
+	    $('#dashboard').append(currentShield);
+	};
+
 	Game.prototype.scorePoints = function (object) {
-	    if (object.height) {
-	        this.score += object.width + object.height;
-	    } else if (object.radius) {
+	    if (object.constructor.name == 'Asteroid') {
+	        this.score += 200 - (object.width + object.height);
+	    } else if (object.constructor.name == 'Alien') {
 	        this.score += 500;
 	    }
 
@@ -1592,10 +1600,24 @@
 	    return this;
 	};
 
+	Game.prototype.updateShield = function () {
+	    if (this.shield > 50) {
+	        var updatedShield = "<div id='shield' style='color:white;'>Shield remaining: " + this.shield + "</div>";
+	    } else if (this.shield > 25) {
+	        var updatedShield = "<div id='shield' style='color:orange;'>Shield remaining: " + this.shield + "</div>";
+	    } else {
+	        var updatedShield = "<div id='shield' style='color:red;'>Shield remaining: " + this.shield + "</div>";
+	    }
+	    $('#shield').replaceWith(updatedShield);
+
+	    return this;
+	};
+
 	Game.prototype.levelUp = function () {
 	    this.asteroidQuantity += 2;
 	    this.asteroidVelocity += .25;
 	    this.alienQuantity += 1;
+	    this.shield = 100;
 	    this.spaceTime.ship.x = this.spaceTime.canvas.width / 2;
 	    this.spaceTime.ship.y = this.spaceTime.canvas.height / 2;
 
@@ -1652,6 +1674,7 @@
 	    this.drawShield(this.ship);
 	    this.game.updateScore();
 	    this.game.updateLives();
+	    this.game.updateShield();
 	};
 
 	ST.prototype.initialAsteroids = function (numberOfAsteroids) {
@@ -1865,19 +1888,19 @@
 
 	    this.alienLasers.forEach(function (laser) {
 	        if (laser.x > this.canvas.width) {
-	            this.lasers = this.lasers.filter(function (l) {
+	            this.alienLasers = this.alienLasers.filter(function (l) {
 	                return l !== laser;
 	            });
 	        } else if (laser.x < 0) {
-	            this.lasers = this.lasers.filter(function (l) {
+	            this.alienLasers = this.alienLasers.filter(function (l) {
 	                return l !== laser;
 	            });
 	        } else if (laser.y > this.canvas.height) {
-	            this.lasers = this.lasers.filter(function (l) {
+	            this.alienLasers = this.alienLasers.filter(function (l) {
 	                return l !== laser;
 	            });
 	        } else if (laser.y < 0) {
-	            this.lasers = this.lasers.filter(function (l) {
+	            this.alienLasers = this.alienLasers.filter(function (l) {
 	                return l !== laser;
 	            });
 	        }
