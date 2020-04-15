@@ -2,7 +2,6 @@
 const chai   = require('chai');
 const assert = chai.assert;
 const Ship   = require('../lib/ship');
-const $      = require('jquery');
 
 describe('ship functionality', function () {
 

@@ -3,7 +3,6 @@ const chai = require('chai');
 const assert = chai.assert;
 const Shield = require('../lib/shield');
 const Ship = require('../lib/ship');
-const $ = require('jquery');
 
 describe('shield functionality', function () {
     it('testing should work', function () {

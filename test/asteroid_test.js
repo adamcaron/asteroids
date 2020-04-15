@@ -2,7 +2,6 @@
 const chai     = require('chai');
 const assert   = chai.assert;
 const Asteroid = require('../lib/asteroid');
-const $        = require('jquery');
 
 describe('asteroid functionality', function () {
     it('testing should work', function () {
@@ -26,6 +25,5 @@ describe('asteroid functionality', function () {
         assert.equal(asteroid.x,12);
         assert.equal(asteroid.y,12);
     });
-
 
 });

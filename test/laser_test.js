@@ -3,7 +3,6 @@ const chai   = require('chai');
 const assert = chai.assert;
 const Laser  = require('../lib/laser');
 const Ship   = require('../lib/ship');
-const $      = require('jquery');
 
 describe('laser functionality', function () {
 

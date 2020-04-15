@@ -1,8 +1,7 @@
 "use strict";
 const chai   = require('chai');
 const assert = chai.assert;
-const ST     = require('../lib/spacetime');
-const $      = require('jquery');
+const SpaceTime     = require('../lib/spacetime');
 
 describe('SpaceTime functionality', function () {
 
@@ -12,7 +11,7 @@ describe('SpaceTime functionality', function () {
             let canvas = { width: 800, height: 400 };
             let game   = { asteroidQuantity: 5, alienQuantity: 2 };
 
-            let spaceTime = new ST(canvas, null, game);
+            let spaceTime = new SpaceTime(canvas, null, game);
 
             assert.equal(spaceTime.asteroids.length, 5);
             assert.equal(spaceTime.aliens.length, 2);
@@ -26,7 +25,7 @@ describe('SpaceTime functionality', function () {
         it('initializes a bunch of asteroids', function () {
             let canvas    = { width: 800, height: 400 };
             let game      = { asteroidQuantity: null, alienQuantity: null };
-            let spaceTime = new ST(canvas, null, game);
+            let spaceTime = new SpaceTime(canvas, null, game);
             let numberOfAsteroids = 15;
 
             spaceTime.initialAsteroids(numberOfAsteroids);
@@ -37,7 +36,7 @@ describe('SpaceTime functionality', function () {
         it('initializes some aliens', function () {
             let canvas    = { width: 800, height: 400 };
             let game      = { asteroidQuantity: null, alienQuantity: null };
-            let spaceTime = new ST(canvas, null, game);
+            let spaceTime = new SpaceTime(canvas, null, game);
             let numberOfAliens = 2;
 
             spaceTime.initialAliens(numberOfAliens);
@@ -51,7 +50,7 @@ describe('SpaceTime functionality', function () {
         it('fires lasers', function () {
             let canvas    = { width: 800, height: 400 };
             let game      = { asteroidQuantity: 5, alienQuantity: 2 };
-            let spaceTime = new ST(canvas, null, game);
+            let spaceTime = new SpaceTime(canvas, null, game);
 
             spaceTime.fireLaser();
             spaceTime.fireLaser();
@@ -63,7 +62,7 @@ describe('SpaceTime functionality', function () {
         it('activates shields', function () {
             let canvas    = { width: 800, height: 400 };
             let game      = { asteroidQuantity: 5, alienQuantity: 2 };
-            let spaceTime = new ST(canvas, null, game);
+            let spaceTime = new SpaceTime(canvas, null, game);
 
             spaceTime.activeShield();
 
@@ -73,7 +72,7 @@ describe('SpaceTime functionality', function () {
         it('drops mines', function () {
             let canvas    = { width: 800, height: 400 };
             let game      = { asteroidQuantity: 5, alienQuantity: 2 };
-            let spaceTime = new ST(canvas, null, game);
+            let spaceTime = new SpaceTime(canvas, null, game);
 
             spaceTime.layMine();
             spaceTime.layMine();

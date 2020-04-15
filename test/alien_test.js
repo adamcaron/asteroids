@@ -2,8 +2,6 @@
 const chai = require('chai');
 const assert = chai.assert;
 const Alien = require('../lib/alien');
-const AlienLaser = require('../lib/alienLaser');
-const $ = require('jquery');
 
 describe('alien functionality', function () {
     it('testing should work', function () {

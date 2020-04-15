@@ -3,7 +3,6 @@ const chai = require('chai');
 const assert = chai.assert;
 const Mine = require('../lib/mine');
 const Ship = require('../lib/ship');
-const $ = require('jquery');
 
 describe('mine functionality', function () {
     it('testing should work', function () {
