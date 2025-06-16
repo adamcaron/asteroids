@@ -29,3 +29,20 @@ To run tests in Node:
 ```js
 npm test
 ```
+
+## High Score Leaderboard
+
+This project now includes simple Firebase hooks to store scores. Provide your
+Firebase project credentials in `firebase-leaderboard.js`:
+
+```
+var firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_APP.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID"
+};
+```
+
+The free tier of Firebase is sufficient for small projects. When the game ends,
+your score is written to Firestore and the top five scores are displayed inside
+the `#high-scores` div.

@@ -50,8 +50,11 @@
 	var context = canvas.getContext('2d');
 	var Game = __webpack_require__(1);
 
-	var game = new Game(canvas, context);
-	renderWelcomeScreen();
+var game = new Game(canvas, context);
+if (window.loadScores) {
+    window.loadScores();
+}
+renderWelcomeScreen();
 
 	function listen() {
 	    requestAnimationFrame(function gameLoop() {
@@ -288,14 +291,19 @@
 	    return this;
 	};
 
-	Game.prototype.gameOver = function () {
-	    this.playing = false;
-	    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-	    $('#game').toggle();
-	    $('#game-window').append('<div id="game-over"><p>GAME OVER<br>Score: ' + this.score + '<br>Level: ' + this.level + '<br><br>Press Enter to restart</p></div>');
-	    //var newScore = "<div>Player: " + this.score + "</div>";
-	    //$('#high-scores').append(newScore);
-	};
+        Game.prototype.gameOver = function () {
+            this.playing = false;
+            this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            $('#game').toggle();
+            $('#game-window').append('<div id="game-over"><p>GAME OVER<br>Score: ' + this.score + '<br>Level: ' + this.level + '<br><br>Press Enter to restart</p></div>');
+            if (window.saveScore) {
+                window.saveScore(this.score, this.level).then(function () {
+                    if (window.loadScores) {
+                        window.loadScores();
+                    }
+                });
+            }
+        };
 
 /***/ }),
 /* 2 */
