@@ -32,18 +32,23 @@ npm test
 
 ## High Score Leaderboard
 
-This project now includes simple Firebase hooks to store scores. Provide your
-Firebase project credentials in `firebase-leaderboard.js` or supply them at
-runtime using a `FIREBASE_CONFIG` variable:
+This project now includes simple Firebase hooks to store scores. The
+configuration is hard-coded in `firebase-leaderboard.js` for a public demo
+project:
 
 ```
-var defaultConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_APP.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID"
+var firebaseConfig = {
+  apiKey: "AIzaSyAnW89Ydx9-6PA6zgOiyi5LC3fGDM75Lug",
+  authDomain: "asteroids-high-scores-f6c47.firebaseapp.com",
+  projectId: "asteroids-high-scores-f6c47",
+  storageBucket: "asteroids-high-scores-f6c47.firebasestorage.app",
+  messagingSenderId: "52296295518",
+  appId: "1:52296295518:web:c98a3998c6b37fcae680cf"
 };
-var firebaseConfig = window.FIREBASE_CONFIG || defaultConfig;
 ```
+
+Feel free to edit these values with your own Firebase project credentials if
+you wish to use a different backend.
 
 The free tier of Firebase is sufficient for small projects. When the game ends,
 your score is written to Firestore and the top five scores are displayed inside
