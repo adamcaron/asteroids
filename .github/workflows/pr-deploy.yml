@@ -1,0 +1,27 @@
+name: Deploy preview
+
+on:
+  push:
+    branches:
+      - codex/persist-high-score-leaderboard
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Inject Firebase config
+        run: echo "VITE_FIREBASE_CONFIG=${{ secrets.VITE_FIREBASE_CONFIG }}" > .env
+      - run: npm install
+      - run: npm run build
+      - name: Deploy to gh-pages-preview
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages-preview
+
