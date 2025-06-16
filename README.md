@@ -33,14 +33,16 @@ npm test
 ## High Score Leaderboard
 
 This project now includes simple Firebase hooks to store scores. Provide your
-Firebase project credentials in `firebase-leaderboard.js`:
+Firebase project credentials in `firebase-leaderboard.js` or supply them at
+runtime using a `FIREBASE_CONFIG` variable:
 
 ```
-var firebaseConfig = {
+var defaultConfig = {
   apiKey: "YOUR_API_KEY",
   authDomain: "YOUR_APP.firebaseapp.com",
   projectId: "YOUR_PROJECT_ID"
 };
+var firebaseConfig = window.FIREBASE_CONFIG || defaultConfig;
 ```
 
 The free tier of Firebase is sufficient for small projects. When the game ends,
